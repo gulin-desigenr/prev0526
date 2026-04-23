@@ -174,8 +174,9 @@
       padding: 100px 5%;
       overflow: hidden;
     }
+    .section-professor picture { position: absolute; inset: 0; pointer-events: none; }
     .professor-bg {
-      position: absolute; inset: 0; width: 100%; height: 100%;
+      width: 100%; height: 100%;
       object-fit: cover; pointer-events: none;
     }
     .professor-content {
@@ -384,7 +385,10 @@
   <!-- ═══ HERO ═══ -->
   <section class="section-hero">
     <div class="hero-bg">
-      <img src="assets/hero-bg.png" alt="">
+      <picture>
+        <source media="(max-width: 900px)" srcset="assets/bg-hero-mobile.jpg">
+        <img src="assets/hero-bg.png" alt="">
+      </picture>
     </div>
     <div class="hero-content">
       <div class="hero-top-row">
@@ -483,7 +487,10 @@
 
   <!-- ═══ SOBRE O PROFESSOR ═══ -->
   <section class="section-professor">
-    <img class="professor-bg" src="assets/bg-professor.jpg" alt="">
+    <picture>
+      <source media="(max-width: 900px)" srcset="assets/bg-professor-mobile.jpg">
+      <img class="professor-bg" src="assets/bg-professor.jpg" alt="">
+    </picture>
     <div class="professor-content">
 
       <div class="professor-text">
