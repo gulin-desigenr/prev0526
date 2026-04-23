@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscrição Confirmada | A Maior Onda de Clientes</title>
+
+  <!-- AVISO: URLs de imagens do Figma expiram em 7 dias.
+       Baixe e hospede as imagens localmente antes de publicar em produção. -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&family=Unbounded:wght@600&family=Manrope:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background: #010312;
+      color: #fff;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── Gradient text ─── */
+    .text-gold {
+      background: linear-gradient(90deg, #a35139 0%, #feb161 49.519%, #a35139 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── Logo ─── */
+    .logo {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1;
+    }
+    .logo__maior {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 600;
+      font-size: 36px;
+      background: linear-gradient(90deg, #8f8f8f 0%, #ffffff 56%, #8f8f8f 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      white-space: nowrap;
+    }
+    .logo__onda {
+      font-family: 'Unbounded', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      background: linear-gradient(90deg, #a35139 0%, #feb161 49.519%, #a35139 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .logo__sub {
+      font-weight: 300;
+      font-size: 7px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #fff;
+      margin-top: 4px;
+    }
+
+    /* ─── WhatsApp button ─── */
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(104deg, #48f039 17%, #9dff94 40.6%, #48f039 97%);
+      color: #000;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 18px 28px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity .2s, transform .15s;
+      width: 100%;
+      max-width: 520px;
+    }
+    .btn-whatsapp:hover { opacity: .93; transform: translateY(-1px); }
+    .btn-whatsapp img { width: 22px; flex-shrink: 0; }
+
+    /* ─── Progress bar ─── */
+    .progress-wrap {
+      background: #fff;
+      border-radius: 7px;
+      padding: 3px;
+      width: 100%;
+      max-width: 880px;
+    }
+    .progress-bar {
+      background: #48f039;
+      border-radius: 6px;
+      height: 36px;
+      width: 91%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 10px;
+    }
+    .progress-bar span {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: #000;
+      letter-spacing: -.5px;
+    }
+
+    /* ─── Step boxes ─── */
+    .step-box {
+      background: #26293d;
+      border-radius: 12px;
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      max-width: 880px;
+    }
+    .step-box--light {
+      background: #383c58;
+    }
+    .step-box h3 {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+    .step-box p {
+      font-size: 17px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    /* ─── Countdown ─── */
+    .countdown {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .countdown__unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      min-width: 60px;
+    }
+    .countdown__num {
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1.2;
+    }
+    .countdown__label {
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     TOP BANNER
+════════════════════════════════════════════ -->
+<div style="background:linear-gradient(90deg, #ff2626 0%, #991717 100%); padding:16px 24px; text-align:center; flex-shrink:0;">
+  <p style="font-weight:700; font-size:20px; letter-spacing:.2px;">IMPORTANTE! NÃO SAIA DESTA PÁGINA!</p>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     MAIN CONTENT
+════════════════════════════════════════════ -->
+<main style="flex:1; position:relative; overflow:hidden;">
+
+  <!-- Background glow effects -->
+  <div aria-hidden="true" style="position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden;">
+    <img src="https://www.figma.com/api/mcp/asset/88140113-d362-4808-9285-b5760fbbf4a1"
+         alt="" style="position:absolute; width:200%; left:-50%; top:-40%; opacity:.12; filter:blur(60px) rotate(90deg);">
+    <!-- Left glow -->
+    <div style="position:absolute; left:-200px; top:200px; width:600px; height:600px;
+                background:radial-gradient(circle, rgba(247,185,60,.12) 0%, transparent 70%);
+                border-radius:50%;"></div>
+    <!-- Right glow -->
+    <div style="position:absolute; right:-200px; top:-100px; width:700px; height:700px;
+                background:radial-gradient(circle, rgba(72,240,57,.06) 0%, transparent 70%);
+                border-radius:50%;"></div>
+    <!-- Gradient overlays -->
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(1,3,18,0) 30%, rgba(1,3,18,.72) 60%, #010312 100%);"></div>
+    <div style="position:absolute; inset:0; background:linear-gradient(90deg, #010312 0%, rgba(1,3,18,0) 30%, rgba(1,3,18,0) 70%, #010312 100%);"></div>
+  </div>
+
+  <!-- Content -->
+  <div style="position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; padding:48px 24px 64px; gap:28px;">
+
+    <!-- Logo -->
+    <div class="logo">
+      <span class="logo__maior">A maior</span>
+      <span class="logo__onda">ONDA DE CLIENTES</span>
+      <span class="logo__sub">na Advocacia Previdenciária</span>
+    </div>
+
+    <!-- Headline -->
+    <p style="font-weight:700; font-size:42px; line-height:1.15; text-align:center; max-width:700px; letter-spacing:-.5px;">
+      Faltam apenas 1 passo para confirmar a sua inscrição:
+    </p>
+
+    <!-- Progress bar -->
+    <div class="progress-wrap">
+      <div class="progress-bar">
+        <span>91%</span>
+      </div>
+    </div>
+
+    <!-- Step 1: WhatsApp -->
+    <div class="step-box">
+      <h3>1. Entre no Grupo exclusivo no WhatsApp:</h3>
+      <p>
+        Esse passo é ESSENCIAL para garantir o seu acesso à aula, à oferta e aos materiais gratuitos.<br>
+        Toque no botão abaixo e entre agora mesmo:
+      </p>
+      <a href="LINK_WHATSAPP_AQUI" class="btn-whatsapp">
+        <img src="https://www.figma.com/api/mcp/asset/a4b8f0b8-0b07-4191-84cd-6088ede22b3a" alt="WhatsApp">
+        CONFIRMAR INSCRIÇÃO E ENTRAR NO GRUPO
+      </a>
+    </div>
+
+    <!-- Step 2: Email -->
+    <div class="step-box step-box--light">
+      <h3>2. Verifique se você recebeu o e-mail de confirmação da sua inscrição.</h3>
+      <p>Acabei de te enviar um e-mail muito importante. Cheque a caixa principal e, se não encontrar, olhe o Spam, aba de Promoções e a Lixeira.</p>
+    </div>
+
+    <!-- Countdown -->
+    <div style="text-align:center; display:flex; flex-direction:column; gap:24px; align-items:center; margin-top:8px;">
+      <p style="font-weight:700; font-size:20px; line-height:1.4; max-width:540px;">
+        <span class="text-gold">O seu acesso à A Maior Onda de Clientes na Advocacia Previdenciária será liberado em:</span>
+      </p>
+
+      <div class="countdown">
+        <div class="countdown__unit">
+          <span class="countdown__num" id="cd-days">00</span>
+          <span class="countdown__label">dias</span>
+        </div>
+        <div class="countdown__unit">
+          <span class="countdown__num" id="cd-hours">00</span>
+          <span class="countdown__label">horas</span>
+        </div>
+        <div class="countdown__unit">
+          <span class="countdown__num" id="cd-minutes">00</span>
+          <span class="countdown__label">minutos</span>
+        </div>
+        <div class="countdown__unit">
+          <span class="countdown__num" id="cd-seconds">00</span>
+          <span class="countdown__label">segundos</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer style="background:#02061b; padding:28px 24px; text-align:center; flex-shrink:0;">
+  <p style="font-size:13px; color:#fff; line-height:1.8;">
+    © 2026 - ePREV Ensino Jurídico - Todos os direitos reservados<br>
+    <a href="#" style="color:#fff; text-decoration:underline;">Termos de Uso</a>
+    &nbsp;|&nbsp;
+    <a href="#" style="color:#fff; text-decoration:underline;">Políticas de Privacidade</a>
+  </p>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════
+     COUNTDOWN SCRIPT
+     Ajuste TARGET_DATE para a data/hora do evento
+════════════════════════════════════════════ -->
+<script>
+  // ← Altere esta data para o início do evento (ISO 8601, horário de Brasília = UTC-3)
+  const TARGET_DATE = new Date('2026-05-05T20:02:00-03:00');
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    const now  = new Date();
+    const diff = TARGET_DATE - now;
+
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent    = '00';
+      document.getElementById('cd-hours').textContent   = '00';
+      document.getElementById('cd-minutes').textContent = '00';
+      document.getElementById('cd-seconds').textContent = '00';
+      return;
+    }
+
+    const days    = Math.floor(diff / 86400000);
+    const hours   = Math.floor((diff % 86400000) / 3600000);
+    const minutes = Math.floor((diff % 3600000)  / 60000);
+    const seconds = Math.floor((diff % 60000)    / 1000);
+
+    document.getElementById('cd-days').textContent    = pad(days);
+    document.getElementById('cd-hours').textContent   = pad(hours);
+    document.getElementById('cd-minutes').textContent = pad(minutes);
+    document.getElementById('cd-seconds').textContent = pad(seconds);
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>
+
+</body>
+</html>

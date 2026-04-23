@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 44.2347 30.16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon-box-icon">
+<rect width="44.2347" height="30.16" rx="15.08" fill="url(#paint0_linear_0_4)"/>
+<path id="icon/checkmark" d="M19.8081 18.0691L27.8184 10.0587C28.0075 9.86967 28.228 9.77516 28.4801 9.77516C28.7321 9.77516 28.9527 9.86967 29.1417 10.0587C29.3307 10.2477 29.4252 10.4724 29.4252 10.7326C29.4252 10.9929 29.3307 11.2172 29.1417 11.4056L20.4697 20.1012C20.2807 20.2902 20.0601 20.3848 19.8081 20.3848C19.556 20.3848 19.3355 20.2902 19.1465 20.1012L15.0822 16.0369C14.8932 15.8479 14.8024 15.6236 14.81 15.364C14.8176 15.1044 14.9162 14.8797 15.1058 14.6901C15.2955 14.5004 15.5201 14.4059 15.7797 14.4065C16.0393 14.4071 16.2637 14.5017 16.4527 14.6901L19.8081 18.0691Z" fill="var(--fill-0, #020412)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_4" x1="0" y1="15.08" x2="44.2347" y2="15.08" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F7B93C"/>
+<stop offset="0.5112" stop-color="#FFC890"/>
+<stop offset="1" stop-color="#FFE5CA"/>
+</linearGradient>
+</defs>
+</svg>

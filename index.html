@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Maior Onda de Clientes | Advocacia Previdenciária</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,700;6..12,800&family=Unbounded:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background: #010312;
+      color: #fff;
+      overflow-x: hidden;
+      min-width: 1920px;
+    }
+
+    .grad-gold {
+      background: linear-gradient(90deg, #f7b93c 0%, #ffc890 51.12%, #ffe5ca 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(90deg, #f7b93c 0%, #ffc890 51.12%, #ffe5ca 100%);
+      color: #000;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      font-size: 19.4px;
+      padding: 26px 32px;
+      border-radius: 17px;
+      border: 5px solid rgba(255, 255, 255, 0.04);
+      box-shadow: 0 4px 44px rgba(255, 189, 161, 0.4);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity .2s, transform .15s;
+      width: 428px;
+    }
+    .btn-gold:hover { opacity: .92; transform: translateY(-1px); }
+
+
+    /* ═══ HERO ═══ */
+    .section-hero {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      display: flex;
+      align-items: center;
+      padding-left: 390px;
+      padding-right: 10px;
+      overflow: hidden;
+    }
+    .hero-bg { position: absolute; inset: 0; background: #010312; }
+    .hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+    .hero-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      width: 621px;
+    }
+    .hero-top-row { display: flex; align-items: center; gap: 43px; }
+    .hero-logo { width: 240px; height: 75px; object-fit: contain; flex-shrink: 0; }
+    .hero-badge {
+      display: flex; align-items: center; justify-content: center;
+      height: 69px; padding: 20px 32px;
+      border: 0.5px solid #f7b93c; border-radius: 258px;
+      background: rgba(0,0,0,0.2); backdrop-filter: blur(5.5px);
+      font-size: 16px; white-space: nowrap;
+    }
+    .hero-headline { font-size: 30.8px; font-weight: 800; color: #fff; line-height: 1.3; width: 578px; }
+
+    .hero-list { display: flex; flex-direction: column; gap: 12px; }
+    .hero-list-item {
+      display: flex; align-items: center; gap: 13px;
+      padding: 20px 32px;
+      background: rgba(57,62,70,0.2); border: 1px solid rgba(242,240,239,0.15);
+      border-radius: 4px; width: 517px;
+    }
+    .hero-list-item img { width: 18px; height: 13px; flex-shrink: 0; }
+    .hero-list-item p  { font-size: 18px; color: #fff; line-height: 1.4; }
+
+    .hero-date { display: flex; align-items: center; gap: 16px; }
+    .hero-date img { width: 32px; height: 32px; flex-shrink: 0; }
+    .hero-date p   { font-size: 21px; color: #fff; white-space: nowrap; }
+
+
+    /* ═══ CONTEXTO ═══ */
+    .section-contexto {
+      width: 1920px; display: flex; justify-content: center; padding: 70px 148px;
+    }
+    .contexto-card {
+      background: #13162b; display: flex; align-items: center;
+      gap: 45px; padding: 40px; border-radius: 16px;
+    }
+    .contexto-img { width: 496px; height: 402px; border-radius: 20px; object-fit: cover; flex-shrink: 0; }
+    .contexto-text { display: flex; flex-direction: column; gap: 31px; width: 468px; }
+    .contexto-headline { font-size: 36px; font-weight: 800; line-height: 1.3; }
+    .contexto-body { font-size: 18px; color: #fff; line-height: 1.6; }
+
+
+    /* ═══ O QUE VAI APRENDER ═══ */
+    .section-aprender {
+      width: 1920px; display: flex; justify-content: center; padding: 60px 10px;
+    }
+    .aprender-grid {
+      display: flex; flex-wrap: wrap; gap: 32px;
+      align-items: center; justify-content: center; width: 1082px;
+    }
+    .aprender-heading {
+      border-bottom: 1px solid #fbcd99; padding-bottom: 61px;
+      width: 472px; align-self: flex-start;
+    }
+    .aprender-heading h2 { font-size: 36px; font-weight: 800; color: #fff; line-height: 1.3; }
+
+    .icon-box {
+      display: flex; flex-direction: column; gap: 24px; padding: 32px 20px;
+      background: rgba(12,15,36,0.53); border: 1px solid #26293d;
+      border-radius: 20px; width: 480px; backdrop-filter: blur(15.6px);
+    }
+    .icon-box-wide { width: 992px; }
+    .icon-box-icon { width: 44px; height: 30px; object-fit: contain; flex-shrink: 0; }
+    .icon-box p      { font-size: 18px; color: #f2f0ef; line-height: 1.5; }
+    .icon-box strong { font-weight: 700; }
+
+
+    /* ═══ SOBRE O PROFESSOR ═══ */
+    .section-professor {
+      position: relative; width: 1920px;
+      display: flex; justify-content: center;
+      padding: 170px 10px 167px; overflow: hidden;
+    }
+    .professor-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; pointer-events: none;
+    }
+    .professor-content { position: relative; display: flex; gap: 146px; align-items: flex-end; }
+    .professor-text { display: flex; flex-direction: column; gap: 31px; width: 468px; }
+    .professor-headline { font-size: 52px; font-weight: 800; line-height: 1.2; }
+    .professor-body {
+      font-size: 18px; color: #fff; line-height: 1.65;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .professor-labels { display: flex; flex-direction: column; gap: 22px; width: 471px; }
+    .label-badge {
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px 38px; border: 0.6px solid #f7b93c; border-radius: 303px;
+      background: rgba(2,4,18,0.8); backdrop-filter: blur(6.5px);
+      font-size: 18.8px; line-height: 1.4; text-align: center;
+    }
+
+
+    /* ═══ RODAPÉ ═══ */
+    .section-rodape {
+      width: 1920px; height: 97px;
+      display: flex; align-items: center; justify-content: center;
+      background: #02061b; backdrop-filter: blur(15.4px);
+    }
+    .rodape-text { font-size: 14px; color: #fff; text-align: center; line-height: 1.73; }
+    .rodape-text a { text-decoration: underline; }
+
+
+    /* ═══════════════════════════════════════════
+       POPUP
+    ════════════════════════════════════════════ */
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(1, 3, 18, 0.88);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+    .popup-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .popup-box {
+      position: relative;
+      background: #0d1024;
+      border: 1px solid rgba(247, 185, 60, 0.4);
+      border-radius: 20px;
+      padding: 52px 48px 44px;
+      width: 560px;
+      box-shadow: 0 0 80px rgba(247, 185, 60, 0.12);
+      transform: translateY(16px);
+      transition: transform .25s ease;
+    }
+    .popup-overlay.active .popup-box {
+      transform: translateY(0);
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.5);
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px 8px;
+      transition: color .15s;
+    }
+    .popup-close:hover { color: #fff; }
+
+    .popup-headline {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .popup-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+      margin-bottom: 32px;
+    }
+
+    .popup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .popup-input {
+      width: 100%;
+      padding: 16px 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(247, 185, 60, 0.25);
+      border-radius: 10px;
+      color: #fff;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 16px;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .popup-input::placeholder { color: rgba(255,255,255,0.35); }
+    .popup-input:focus { border-color: #f7b93c; }
+
+    .popup-submit {
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(90deg, #f7b93c 0%, #ffc890 51.12%, #ffe5ca 100%);
+      color: #000;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 30px rgba(255,189,161,0.4);
+      transition: opacity .2s, transform .15s;
+      margin-top: 4px;
+    }
+    .popup-submit:hover { opacity: .92; transform: translateY(-1px); }
+
+    .popup-lgpd {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.5;
+      text-align: center;
+      margin-top: 16px;
+    }
+    .popup-lgpd a { text-decoration: underline; color: rgba(255,255,255,0.4); }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="section-hero">
+    <div class="hero-bg">
+      <img src="assets/hero-bg.png" alt="">
+    </div>
+    <div class="hero-content">
+      <div class="hero-top-row">
+        <img class="hero-logo" src="assets/logo.svg" alt="A Maior Onda de Clientes na Advocacia Previdenciária">
+        <div class="hero-badge">
+          <span class="grad-gold">EXCLUSIVO PARA ADVOGADOS</span>
+        </div>
+      </div>
+
+      <p class="hero-headline">
+        Ex-juiz federal com 20 anos de experiência revela o passo a passo PRÁTICO para
+        <span class="grad-gold">atuar com segurança nas Teses Vencedoras do previdenciário</span>
+        em 2026 e ter uma fila de clientes.
+      </p>
+
+      <div class="hero-list">
+        <div class="hero-list-item">
+          <img src="assets/icon-checkmark-1.svg" alt="">
+          <p>Passo a passo para ter mais concessões (e rápidas);</p>
+        </div>
+        <div class="hero-list-item">
+          <img src="assets/icon-checkmark-2.svg" alt="">
+          <p>Como ter recorde de honorários.</p>
+        </div>
+      </div>
+
+      <button class="btn-gold" onclick="openPopup()">CLIQUE AQUI PARA SE INSCREVER</button>
+
+      <div class="hero-date">
+        <img src="assets/icon-calendar.svg" alt="">
+        <p>
+          <strong class="grad-gold">05 a 07</strong>
+          <span> de Maio, às </span>
+          <strong class="grad-gold">20h02.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ CONTEXTO ═══ -->
+  <section class="section-contexto">
+    <div class="contexto-card">
+      <img class="contexto-img" src="assets/foto-escritorio.png" alt="Frederico Martins no escritório">
+      <div class="contexto-text">
+        <h2 class="contexto-headline grad-gold">Em 2026, a advocacia previdenciária vai viver uma Zona de Convergência.</h2>
+        <p class="contexto-body">Uma combinação de oportunidades extraordinárias que vai permitir que alguns advogados tenham o maior volume de clientes, concessões e honorários de toda a sua carreira — atuando nas Teses Vencedoras de 2026.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ O QUE VAI APRENDER ═══ -->
+  <section class="section-aprender">
+    <div class="aprender-grid">
+
+      <div class="aprender-heading">
+        <h2>O que você vai aprender no melhor <span class="grad-gold">Curso Gratuito de Prática Previdenciária:</span></h2>
+      </div>
+
+      <div class="icon-box">
+        <img class="icon-box-icon" src="assets/icon-box.svg" alt="">
+        <p>Como dominar o <strong>Protocolo de Concessões Máximas</strong> e aproveitar A Maior Onda de Clientes na Advocacia Previdenciária para conquistar <strong class="grad-gold">estabilidade financeira em tempo recorde;</strong></p>
+      </div>
+
+      <div class="icon-box">
+        <img class="icon-box-icon" src="assets/icon-box.svg" alt="">
+        <p>O passo a passo validado por mais de <strong>14.000 advogados</strong> para receber <strong class="grad-gold">honorários em até 90 dias</strong> na via administrativa;</p>
+      </div>
+
+      <div class="icon-box">
+        <img class="icon-box-icon" src="assets/icon-box.svg" alt="">
+        <p>Acesso exclusivo às <strong class="grad-gold">Teses Vencedoras</strong> para garantir <strong>altos honorários</strong> na via judicial;</p>
+      </div>
+
+      <div class="icon-box">
+        <img class="icon-box-icon" src="assets/icon-box.svg" alt="">
+        <p>Como atuar na <strong>3ª via previdenciarista</strong> (e que poucos conhecem) para não depender dos servidores e dos juízes para ter um <strong class="grad-gold">escritório lucrativo todos os meses;</strong></p>
+      </div>
+
+      <div class="icon-box">
+        <img class="icon-box-icon" src="assets/icon-box.svg" alt="">
+        <p>Como se diferenciar da concorrência e se tornar referência na sua cidade e <strong class="grad-gold">procurado pelos clientes;</strong></p>
+      </div>
+
+      <div class="icon-box icon-box-wide">
+        <img class="icon-box-icon" src="assets/icon-box.svg" alt="">
+        <p>A metodologia desenvolvida por mim, que possuo 20 anos de experiência (sendo 10 como juiz federal), para você aproveitar uma <strong class="grad-gold">oportunidade nunca vista antes no previdenciário.</strong></p>
+      </div>
+
+      <button class="btn-gold" onclick="openPopup()">APROVEITAR ESSA OPORTUNIDADE</button>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ SOBRE O PROFESSOR ═══ -->
+  <section class="section-professor">
+    <img class="professor-bg" src="assets/bg-professor.jpg" alt="">
+    <div class="professor-content">
+
+      <div class="professor-text">
+        <h2 class="professor-headline grad-gold">Quem é o Prof. Frederico Martins?</h2>
+        <div class="professor-body">
+          <p><strong>Frederico Martins é advogado, ex-juiz federal,</strong> ex-assessor, <strong>Mestre em Direito pela UERJ,</strong> professor de cursos e pós-graduações, autor, palestrante e coordenador da ePREV – Ensino Jurídico.</p>
+          <p>Com mais de 20 anos de experiência, atuou nas diferentes frentes do Direito Previdenciário e dominou de forma prática o conhecimento jurídico, levando-o a desenvolver o <strong>Protocolo de Concessões Máximas.</strong></p>
+          <p>Sua metodologia já ajudou mais de 14.000 advogados a atuarem com <strong>total segurança e obter números recordes de concessões</strong> na via judicial e na via administrativa.</p>
+          <p>Após pedir exoneração da magistratura há alguns meses, Frederico decidiu voltar para o campo de batalha para não apenas te ensinar, mas <strong class="grad-gold">viver junto com você A Maior Onda de Clientes na Advocacia Previdenciária.</strong></p>
+        </div>
+        <button class="btn-gold" onclick="openPopup()">GARANTIR MEU LUGAR NO EVENTO</button>
+      </div>
+
+      <div class="professor-labels">
+        <div class="label-badge"><span class="grad-gold">Ex-Juiz Federal</span></div>
+        <div class="label-badge" style="width:345px"><span class="grad-gold">20 anos de experiência na área e referência no previdenciário</span></div>
+        <div class="label-badge"><span class="grad-gold">+ de 14.000 alunos com vidas transformadas</span></div>
+        <div class="label-badge"><span class="grad-gold">Professor e Coordenador da IJUPREV</span></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ RODAPÉ ═══ -->
+  <footer class="section-rodape">
+    <div class="rodape-text">
+      <p>© 2026 - ePREV Ensino Jurídico - Todos os direitos reservados</p>
+      <p><a href="#">Termos de Uso</a> | <a href="#">Políticas de Privacidade</a></p>
+    </div>
+  </footer>
+
+
+  <!-- ═══ POPUP ═══ -->
+  <div class="popup-overlay" id="popupOverlay" onclick="handleOverlayClick(event)">
+    <div class="popup-box">
+      <button class="popup-close" onclick="closePopup()" aria-label="Fechar">×</button>
+
+      <p class="popup-headline">Garanta sua vaga<br><span class="grad-gold">no evento gratuito</span></p>
+      <p class="popup-sub">Preencha os dados abaixo e receba o acesso no seu e-mail.</p>
+
+      <form class="popup-form" onsubmit="handleSubmit(event)">
+        <input class="popup-input" type="text"  name="nome"     placeholder="Seu nome completo"  required>
+        <input class="popup-input" type="email" name="email"    placeholder="Seu melhor e-mail"  required>
+        <input class="popup-input" type="tel"   name="telefone" placeholder="Seu WhatsApp (com DDD)" required>
+        <button class="popup-submit" type="submit">CLIQUE AQUI PARA SE INSCREVER</button>
+      </form>
+
+      <p class="popup-lgpd">
+        Ao clicar no botão, você concorda com nossos <a href="#">Termos de Uso</a> e autoriza
+        o tratamento de seus dados pessoais conforme a Lei Geral de Proteção de Dados (LGPD).
+      </p>
+    </div>
+  </div>
+
+
+  <script>
+    function openPopup() {
+      document.getElementById('popupOverlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePopup() {
+      document.getElementById('popupOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('popupOverlay')) closePopup();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closePopup();
+    });
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      // TODO: integrar com ActiveCampaign / RD Station / webhook
+      const data = Object.fromEntries(new FormData(e.target));
+      console.log('Lead capturado:', data);
+      alert('Inscrição realizada! Verifique seu e-mail.');
+      closePopup();
+    }
+  </script>
+
+</body>
+</html>
