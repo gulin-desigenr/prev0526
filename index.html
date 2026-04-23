@@ -18,7 +18,6 @@
       background: #010312;
       color: #fff;
       overflow-x: hidden;
-      min-width: 1920px;
     }
 
     .grad-gold {
@@ -41,133 +40,175 @@
       font-size: 19.4px;
       padding: 26px 32px;
       border-radius: 17px;
-      border: 5px solid rgba(255, 255, 255, 0.04);
-      box-shadow: 0 4px 44px rgba(255, 189, 161, 0.4);
+      border: 5px solid rgba(255,255,255,0.04);
+      box-shadow: 0 4px 44px rgba(255,189,161,0.4);
       cursor: pointer;
       white-space: nowrap;
       transition: opacity .2s, transform .15s;
       width: 428px;
+      max-width: 100%;
     }
     .btn-gold:hover { opacity: .92; transform: translateY(-1px); }
 
 
-    /* ═══ HERO ═══ */
+    /* ═══════════════════════════════════════════
+       HERO
+    ════════════════════════════════════════════ */
     .section-hero {
       position: relative;
-      width: 1920px;
-      height: 1080px;
+      width: 100%;
+      min-height: 100vh;
       display: flex;
       align-items: center;
-      padding-left: 390px;
-      padding-right: 10px;
+      padding: 80px 10% 80px 20%;
       overflow: hidden;
     }
     .hero-bg { position: absolute; inset: 0; background: #010312; }
-    .hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: right center; }
 
     .hero-content {
       position: relative;
       display: flex;
       flex-direction: column;
       gap: 30px;
-      width: 621px;
+      max-width: 621px;
+      width: 100%;
     }
-    .hero-top-row { display: flex; align-items: center; gap: 43px; }
+    .hero-top-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
     .hero-logo { width: 240px; height: 75px; object-fit: contain; flex-shrink: 0; }
     .hero-badge {
       display: flex; align-items: center; justify-content: center;
-      height: 69px; padding: 20px 32px;
+      padding: 14px 24px;
       border: 0.5px solid #f7b93c; border-radius: 258px;
       background: rgba(0,0,0,0.2); backdrop-filter: blur(5.5px);
-      font-size: 16px; white-space: nowrap;
+      font-size: 14px; white-space: nowrap;
     }
-    .hero-headline { font-size: 30.8px; font-weight: 800; color: #fff; line-height: 1.3; width: 578px; }
+    .hero-headline { font-size: clamp(20px, 2.2vw, 30.8px); font-weight: 800; color: #fff; line-height: 1.3; }
 
     .hero-list { display: flex; flex-direction: column; gap: 12px; }
     .hero-list-item {
       display: flex; align-items: center; gap: 13px;
-      padding: 20px 32px;
+      padding: 16px 24px;
       background: rgba(57,62,70,0.2); border: 1px solid rgba(242,240,239,0.15);
-      border-radius: 4px; width: 517px;
+      border-radius: 4px;
     }
     .hero-list-item img { width: 18px; height: 13px; flex-shrink: 0; }
-    .hero-list-item p  { font-size: 18px; color: #fff; line-height: 1.4; }
+    .hero-list-item p  { font-size: clamp(15px, 1.2vw, 18px); color: #fff; line-height: 1.4; }
 
-    .hero-date { display: flex; align-items: center; gap: 16px; }
-    .hero-date img { width: 32px; height: 32px; flex-shrink: 0; }
-    .hero-date p   { font-size: 21px; color: #fff; white-space: nowrap; }
+    .hero-date { display: flex; align-items: center; gap: 12px; }
+    .hero-date img { width: 28px; height: 28px; flex-shrink: 0; }
+    .hero-date p   { font-size: clamp(16px, 1.4vw, 21px); color: #fff; }
 
 
-    /* ═══ CONTEXTO ═══ */
+    /* ═══════════════════════════════════════════
+       CONTEXTO
+    ════════════════════════════════════════════ */
     .section-contexto {
-      width: 1920px; display: flex; justify-content: center; padding: 70px 148px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 60px 5%;
     }
     .contexto-card {
-      background: #13162b; display: flex; align-items: center;
-      gap: 45px; padding: 40px; border-radius: 16px;
+      background: #13162b;
+      display: flex;
+      align-items: center;
+      gap: 45px;
+      padding: 40px;
+      border-radius: 16px;
+      max-width: 1200px;
+      width: 100%;
     }
-    .contexto-img { width: 496px; height: 402px; border-radius: 20px; object-fit: cover; flex-shrink: 0; }
-    .contexto-text { display: flex; flex-direction: column; gap: 31px; width: 468px; }
-    .contexto-headline { font-size: 36px; font-weight: 800; line-height: 1.3; }
-    .contexto-body { font-size: 18px; color: #fff; line-height: 1.6; }
+    .contexto-img { width: 420px; height: 340px; border-radius: 20px; object-fit: cover; flex-shrink: 0; }
+    .contexto-text { display: flex; flex-direction: column; gap: 24px; flex: 1; }
+    .contexto-headline { font-size: clamp(22px, 2.5vw, 36px); font-weight: 800; line-height: 1.3; }
+    .contexto-body { font-size: clamp(15px, 1.2vw, 18px); color: #fff; line-height: 1.6; }
 
 
-    /* ═══ O QUE VAI APRENDER ═══ */
+    /* ═══════════════════════════════════════════
+       O QUE VAI APRENDER
+    ════════════════════════════════════════════ */
     .section-aprender {
-      width: 1920px; display: flex; justify-content: center; padding: 60px 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 60px 5%;
     }
     .aprender-grid {
-      display: flex; flex-wrap: wrap; gap: 32px;
-      align-items: center; justify-content: center; width: 1082px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      align-items: flex-start;
+      justify-content: center;
+      max-width: 1100px;
+      width: 100%;
     }
     .aprender-heading {
-      border-bottom: 1px solid #fbcd99; padding-bottom: 61px;
-      width: 472px; align-self: flex-start;
+      border-bottom: 1px solid #fbcd99;
+      padding-bottom: 40px;
+      width: 100%;
+      max-width: 480px;
+      align-self: flex-start;
     }
-    .aprender-heading h2 { font-size: 36px; font-weight: 800; color: #fff; line-height: 1.3; }
+    .aprender-heading h2 { font-size: clamp(22px, 2.5vw, 36px); font-weight: 800; color: #fff; line-height: 1.3; }
 
     .icon-box {
-      display: flex; flex-direction: column; gap: 24px; padding: 32px 20px;
+      display: flex; flex-direction: column; gap: 20px; padding: 28px 20px;
       background: rgba(12,15,36,0.53); border: 1px solid #26293d;
-      border-radius: 20px; width: 480px; backdrop-filter: blur(15.6px);
+      border-radius: 20px; width: calc(50% - 14px); backdrop-filter: blur(15.6px);
     }
-    .icon-box-wide { width: 992px; }
+    .icon-box-wide { width: 100%; }
     .icon-box-icon { width: 44px; height: 30px; object-fit: contain; flex-shrink: 0; }
-    .icon-box p      { font-size: 18px; color: #f2f0ef; line-height: 1.5; }
+    .icon-box p      { font-size: clamp(15px, 1.1vw, 18px); color: #f2f0ef; line-height: 1.5; }
     .icon-box strong { font-weight: 700; }
 
 
-    /* ═══ SOBRE O PROFESSOR ═══ */
+    /* ═══════════════════════════════════════════
+       SOBRE O PROFESSOR
+    ════════════════════════════════════════════ */
     .section-professor {
-      position: relative; width: 1920px;
-      display: flex; justify-content: center;
-      padding: 170px 10px 167px; overflow: hidden;
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 100px 5%;
+      overflow: hidden;
     }
     .professor-bg {
       position: absolute; inset: 0; width: 100%; height: 100%;
       object-fit: cover; pointer-events: none;
     }
-    .professor-content { position: relative; display: flex; gap: 146px; align-items: flex-end; }
-    .professor-text { display: flex; flex-direction: column; gap: 31px; width: 468px; }
-    .professor-headline { font-size: 52px; font-weight: 800; line-height: 1.2; }
+    .professor-content {
+      position: relative;
+      display: flex;
+      gap: 80px;
+      align-items: flex-end;
+      max-width: 1100px;
+      width: 100%;
+    }
+    .professor-text { display: flex; flex-direction: column; gap: 28px; flex: 1; }
+    .professor-headline { font-size: clamp(28px, 3.5vw, 52px); font-weight: 800; line-height: 1.2; }
     .professor-body {
-      font-size: 18px; color: #fff; line-height: 1.65;
+      font-size: clamp(15px, 1.1vw, 18px); color: #fff; line-height: 1.65;
       display: flex; flex-direction: column; gap: 16px;
     }
-    .professor-labels { display: flex; flex-direction: column; gap: 22px; width: 471px; }
+    .professor-labels { display: flex; flex-direction: column; gap: 16px; width: 380px; flex-shrink: 0; }
     .label-badge {
       display: flex; align-items: center; justify-content: center;
-      padding: 24px 38px; border: 0.6px solid #f7b93c; border-radius: 303px;
+      padding: 18px 28px; border: 0.6px solid #f7b93c; border-radius: 303px;
       background: rgba(2,4,18,0.8); backdrop-filter: blur(6.5px);
-      font-size: 18.8px; line-height: 1.4; text-align: center;
+      font-size: clamp(14px, 1.2vw, 18.8px); line-height: 1.4; text-align: center;
     }
 
 
-    /* ═══ RODAPÉ ═══ */
+    /* ═══════════════════════════════════════════
+       RODAPÉ
+    ════════════════════════════════════════════ */
     .section-rodape {
-      width: 1920px; height: 97px;
+      width: 100%;
+      padding: 28px 24px;
       display: flex; align-items: center; justify-content: center;
-      background: #02061b; backdrop-filter: blur(15.4px);
+      background: #02061b;
     }
     .rodape-text { font-size: 14px; color: #fff; text-align: center; line-height: 1.73; }
     .rodape-text a { text-decoration: underline; }
@@ -177,114 +218,165 @@
        POPUP
     ════════════════════════════════════════════ */
     .popup-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(1, 3, 18, 0.88);
+      position: fixed; inset: 0;
+      background: rgba(1,3,18,0.88);
       backdrop-filter: blur(6px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       z-index: 9999;
-      opacity: 0;
-      pointer-events: none;
+      opacity: 0; pointer-events: none;
       transition: opacity .25s ease;
+      padding: 16px;
     }
-    .popup-overlay.active {
-      opacity: 1;
-      pointer-events: all;
-    }
+    .popup-overlay.active { opacity: 1; pointer-events: all; }
 
     .popup-box {
       position: relative;
       background: #0d1024;
-      border: 1px solid rgba(247, 185, 60, 0.4);
+      border: 1px solid rgba(247,185,60,0.4);
       border-radius: 20px;
-      padding: 52px 48px 44px;
-      width: 560px;
-      box-shadow: 0 0 80px rgba(247, 185, 60, 0.12);
+      padding: 48px 40px 40px;
+      width: 100%;
+      max-width: 520px;
+      box-shadow: 0 0 80px rgba(247,185,60,0.12);
       transform: translateY(16px);
       transition: transform .25s ease;
+      max-height: 90vh;
+      overflow-y: auto;
     }
-    .popup-overlay.active .popup-box {
-      transform: translateY(0);
-    }
+    .popup-overlay.active .popup-box { transform: translateY(0); }
 
     .popup-close {
-      position: absolute;
-      top: 18px;
-      right: 22px;
-      background: none;
-      border: none;
-      color: rgba(255,255,255,0.5);
-      font-size: 24px;
-      cursor: pointer;
-      line-height: 1;
-      padding: 4px 8px;
+      position: absolute; top: 16px; right: 20px;
+      background: none; border: none;
+      color: rgba(255,255,255,0.5); font-size: 26px;
+      cursor: pointer; line-height: 1; padding: 4px 8px;
       transition: color .15s;
     }
     .popup-close:hover { color: #fff; }
 
-    .popup-headline {
-      font-size: 28px;
-      font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 8px;
-      color: #fff;
-    }
+    .popup-headline { font-size: clamp(22px, 2vw, 28px); font-weight: 800; line-height: 1.25; margin-bottom: 8px; }
+    .popup-sub { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.5; margin-bottom: 28px; }
 
-    .popup-sub {
-      font-size: 16px;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.5;
-      margin-bottom: 32px;
-    }
-
-    .popup-form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+    .popup-form { display: flex; flex-direction: column; gap: 14px; }
 
     .popup-input {
-      width: 100%;
-      padding: 16px 20px;
+      width: 100%; padding: 15px 18px;
       background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(247, 185, 60, 0.25);
-      border-radius: 10px;
-      color: #fff;
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 16px;
-      outline: none;
-      transition: border-color .2s;
+      border: 1px solid rgba(247,185,60,0.25);
+      border-radius: 10px; color: #fff;
+      font-family: 'Nunito Sans', sans-serif; font-size: 16px;
+      outline: none; transition: border-color .2s;
     }
     .popup-input::placeholder { color: rgba(255,255,255,0.35); }
     .popup-input:focus { border-color: #f7b93c; }
 
-    .popup-submit {
-      width: 100%;
-      padding: 20px;
-      background: linear-gradient(90deg, #f7b93c 0%, #ffc890 51.12%, #ffe5ca 100%);
-      color: #000;
-      font-family: 'Nunito Sans', sans-serif;
-      font-weight: 800;
-      font-size: 17px;
+    /* Campo telefone com seletor de país */
+    .phone-group {
+      display: flex;
+      gap: 0;
+      border: 1px solid rgba(247,185,60,0.25);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+    .phone-group:focus-within { border-color: #f7b93c; }
+
+    .phone-country {
+      padding: 15px 12px;
+      background: rgba(255,255,255,0.08);
       border: none;
-      border-radius: 12px;
+      border-right: 1px solid rgba(247,185,60,0.2);
+      color: #fff;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 15px;
       cursor: pointer;
+      outline: none;
+      flex-shrink: 0;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='rgba(255,255,255,0.5)'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      padding-right: 24px;
+    }
+    .phone-country option { background: #0d1024; }
+
+    .phone-input {
+      flex: 1;
+      padding: 15px 18px;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 16px;
+      outline: none;
+    }
+    .phone-input::placeholder { color: rgba(255,255,255,0.35); }
+
+    .popup-submit {
+      width: 100%; padding: 20px;
+      background: linear-gradient(90deg, #f7b93c 0%, #ffc890 51.12%, #ffe5ca 100%);
+      color: #000; font-family: 'Nunito Sans', sans-serif;
+      font-weight: 800; font-size: 16px;
+      border: none; border-radius: 12px; cursor: pointer;
       box-shadow: 0 4px 30px rgba(255,189,161,0.4);
-      transition: opacity .2s, transform .15s;
-      margin-top: 4px;
+      transition: opacity .2s, transform .15s; margin-top: 4px;
     }
     .popup-submit:hover { opacity: .92; transform: translateY(-1px); }
 
     .popup-lgpd {
-      font-size: 12px;
-      color: rgba(255,255,255,0.4);
-      line-height: 1.5;
-      text-align: center;
-      margin-top: 16px;
+      font-size: 11px; color: rgba(255,255,255,0.4);
+      line-height: 1.5; text-align: center; margin-top: 14px;
     }
     .popup-lgpd a { text-decoration: underline; color: rgba(255,255,255,0.4); }
+
+
+    /* ═══════════════════════════════════════════
+       MOBILE
+    ════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      /* Hero */
+      .section-hero {
+        padding: 100px 24px 60px;
+        align-items: flex-start;
+        min-height: 100svh;
+      }
+      .hero-bg img { object-position: 70% center; }
+      .hero-content { max-width: 100%; }
+      .hero-top-row { gap: 12px; }
+      .hero-logo { width: 180px; height: auto; }
+      .hero-badge { font-size: 12px; padding: 10px 16px; }
+      .hero-list-item { padding: 14px 18px; }
+      .btn-gold { width: 100%; font-size: 16px; padding: 20px; border-radius: 12px; }
+      .hero-date p { white-space: normal; }
+
+      /* Contexto */
+      .contexto-card { flex-direction: column; gap: 24px; padding: 24px; }
+      .contexto-img { width: 100%; height: 220px; }
+      .contexto-text { width: 100%; }
+
+      /* Aprender */
+      .aprender-grid { gap: 16px; }
+      .aprender-heading { max-width: 100%; padding-bottom: 24px; }
+      .icon-box { width: 100%; }
+      .icon-box-wide { width: 100%; }
+
+      /* Professor */
+      .section-professor { padding: 60px 24px; }
+      .professor-content { flex-direction: column; gap: 40px; align-items: flex-start; }
+      .professor-text { width: 100%; }
+      .professor-labels { width: 100%; }
+      .label-badge { font-size: 14px; padding: 14px 20px; }
+      .label-badge[style] { width: 100% !important; }
+    }
+
+    @media (max-width: 480px) {
+      .section-hero { padding: 80px 20px 50px; }
+      .hero-top-row { flex-direction: column; align-items: flex-start; }
+      .section-contexto { padding: 40px 20px; }
+      .section-aprender { padding: 40px 20px; }
+      .popup-box { padding: 40px 24px 32px; }
+    }
   </style>
 </head>
 <body>
@@ -407,7 +499,7 @@
 
       <div class="professor-labels">
         <div class="label-badge"><span class="grad-gold">Ex-Juiz Federal</span></div>
-        <div class="label-badge" style="width:345px"><span class="grad-gold">20 anos de experiência na área e referência no previdenciário</span></div>
+        <div class="label-badge"><span class="grad-gold">20 anos de experiência na área e referência no previdenciário</span></div>
         <div class="label-badge"><span class="grad-gold">+ de 14.000 alunos com vidas transformadas</span></div>
         <div class="label-badge"><span class="grad-gold">Professor e Coordenador da IJUPREV</span></div>
       </div>
@@ -434,9 +526,31 @@
       <p class="popup-sub">Preencha os dados abaixo e receba o acesso no seu e-mail.</p>
 
       <form class="popup-form" onsubmit="handleSubmit(event)">
-        <input class="popup-input" type="text"  name="nome"     placeholder="Seu nome completo"  required>
-        <input class="popup-input" type="email" name="email"    placeholder="Seu melhor e-mail"  required>
-        <input class="popup-input" type="tel"   name="telefone" placeholder="Seu WhatsApp (com DDD)" required>
+        <input class="popup-input" type="text" name="nome" placeholder="Seu nome completo" required>
+        <input class="popup-input" type="email" name="email" placeholder="Seu melhor e-mail" required>
+
+        <!-- Telefone com seletor de país -->
+        <div class="phone-group">
+          <select class="phone-country" id="phoneCountry" onchange="updatePhoneMask()">
+            <option value="+55" data-mask="br"  selected>🇧🇷 +55</option>
+            <option value="+1"  data-mask="us"         >🇺🇸 +1</option>
+            <option value="+351" data-mask="pt"        >🇵🇹 +351</option>
+            <option value="+54" data-mask="ar"         >🇦🇷 +54</option>
+            <option value="+598" data-mask="uy"        >🇺🇾 +598</option>
+            <option value="+595" data-mask="py"        >🇵🇾 +595</option>
+            <option value="+56" data-mask="cl"         >🇨🇱 +56</option>
+            <option value="+57" data-mask="co"         >🇨🇴 +57</option>
+          </select>
+          <input
+            class="phone-input"
+            type="tel"
+            id="phoneInput"
+            name="telefone"
+            placeholder="(45) 99965-4084"
+            inputmode="numeric"
+            required>
+        </div>
+
         <button class="popup-submit" type="submit">CLIQUE AQUI PARA SE INSCREVER</button>
       </form>
 
@@ -449,31 +563,79 @@
 
 
   <script>
+    /* ── Popup ── */
     function openPopup() {
       document.getElementById('popupOverlay').classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-
     function closePopup() {
       document.getElementById('popupOverlay').classList.remove('active');
       document.body.style.overflow = '';
     }
-
     function handleOverlayClick(e) {
       if (e.target === document.getElementById('popupOverlay')) closePopup();
     }
-
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closePopup();
     });
 
+    /* ── Formatação do telefone ── */
+    function updatePhoneMask() {
+      const input = document.getElementById('phoneInput');
+      const country = document.getElementById('phoneCountry');
+      const mask = country.options[country.selectedIndex].dataset.mask;
+
+      // Limpa e reaplica o placeholder correto por país
+      const placeholders = {
+        br: '(45) 99965-4084',
+        us: '(555) 123-4567',
+        pt: '912 345 678',
+        ar: '(11) 1234-5678',
+        uy: '098 123 456',
+        py: '0981 123 456',
+        cl: '9 1234 5678',
+        co: '312 345 6789',
+      };
+      input.placeholder = placeholders[mask] || 'Seu número';
+      input.value = '';
+    }
+
+    document.getElementById('phoneInput').addEventListener('input', function() {
+      const country = document.getElementById('phoneCountry');
+      const mask = country.options[country.selectedIndex].dataset.mask;
+      formatPhone(this, mask);
+    });
+
+    function formatPhone(input, mask) {
+      let digits = input.value.replace(/\D/g, '');
+
+      if (mask === 'br') {
+        // Brasil: (DD) XXXXX-XXXX ou (DD) XXXX-XXXX
+        if (digits.length > 11) digits = digits.slice(0, 11);
+        if (digits.length <= 2) {
+          input.value = digits.length ? '(' + digits : '';
+        } else if (digits.length <= 6) {
+          input.value = '(' + digits.slice(0, 2) + ') ' + digits.slice(2);
+        } else if (digits.length <= 10) {
+          input.value = '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 6) + '-' + digits.slice(6);
+        } else {
+          input.value = '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 7) + '-' + digits.slice(7);
+        }
+      } else {
+        // Para outros países: exibe os dígitos sem formatação específica
+        input.value = digits;
+      }
+    }
+
+    /* ── Submit ── */
     function handleSubmit(e) {
       e.preventDefault();
-      // TODO: integrar com ActiveCampaign / RD Station / webhook
+      const country = document.getElementById('phoneCountry').value;
       const data = Object.fromEntries(new FormData(e.target));
+      data.telefone = country + ' ' + data.telefone;
+      // TODO: integrar com ActiveCampaign / RD Station / webhook
       console.log('Lead capturado:', data);
-      alert('Inscrição realizada! Verifique seu e-mail.');
-      closePopup();
+      window.location.href = 'obrigado.html';
     }
   </script>
 
