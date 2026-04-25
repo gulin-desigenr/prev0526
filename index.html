@@ -83,6 +83,7 @@
       background: rgba(0,0,0,0.2); backdrop-filter: blur(5.5px);
       font-size: 14px; white-space: nowrap;
     }
+    .hero-badge--mobile { display: none; }
     .hero-headline { font-size: clamp(20px, 2.2vw, 30.8px); font-weight: 800; color: #fff; line-height: 1.3; }
 
     .hero-list { display: flex; flex-direction: column; gap: 12px; }
@@ -193,7 +194,9 @@
       font-size: clamp(15px, 1.1vw, 18px); color: #fff; line-height: 1.65;
       display: flex; flex-direction: column; gap: 16px;
     }
-    .professor-labels { display: flex; flex-direction: column; gap: 16px; width: 380px; flex-shrink: 0; }
+    .professor-labels { display: flex; flex-direction: column; gap: 16px; width: 380px; flex-shrink: 0; order: 1; }
+    .professor-text { order: 0; }
+    .professor-overlay { display: none; }
     .label-badge {
       display: flex; align-items: center; justify-content: center;
       padding: 18px 28px; border: 0.6px solid #f7b93c; border-radius: 303px;
@@ -338,17 +341,27 @@
     @media (max-width: 900px) {
       /* Hero */
       .section-hero {
-        padding: 100px 24px 60px;
-        align-items: flex-start;
+        padding: 60vw 20px 44px;
+        align-items: center;
         min-height: 100svh;
       }
-      .hero-bg img { object-position: 70% center; }
-      .hero-content { max-width: 100%; }
-      .hero-top-row { gap: 12px; }
-      .hero-logo { width: 180px; height: auto; }
+      .hero-bg img { object-position: top center; }
+      .hero-content { max-width: 100%; align-items: center; }
+      .hero-top-row { gap: 12px; justify-content: center; }
+      .hero-logo { width: 180px; height: 56px; object-fit: contain; }
+      .hero-headline { text-align: center; }
       .hero-badge { font-size: 12px; padding: 10px 16px; }
+      .hero-top-row .hero-badge { display: none; }
+      .hero-badge--mobile {
+        display: flex;
+        width: auto;
+        justify-content: center;
+        font-size: 12px;
+        padding: 10px 20px;
+      }
       .hero-list-item { padding: 14px 18px; }
       .btn-gold { width: 100%; font-size: 16px; padding: 20px; border-radius: 12px; }
+      .hero-date { justify-content: center; }
       .hero-date p { white-space: normal; }
 
       /* Contexto */
@@ -363,17 +376,31 @@
       .icon-box-wide { width: 100%; }
 
       /* Professor */
-      .section-professor { padding: 60px 24px; }
-      .professor-content { flex-direction: column; gap: 40px; align-items: flex-start; }
-      .professor-text { width: 100%; }
-      .professor-labels { width: 100%; }
-      .label-badge { font-size: 14px; padding: 14px 20px; }
-      .label-badge[style] { width: 100% !important; }
+      .section-professor { padding: 63vw 26px 40px; }
+      .professor-overlay {
+        display: block;
+        position: absolute; inset: 0;
+        background: linear-gradient(187deg, rgba(1,3,18,0) 22%, rgba(1,3,18,0.85) 31%, rgb(1,3,18) 35%);
+        pointer-events: none;
+      }
+      .professor-bg { object-position: top center; }
+      .professor-content { flex-direction: column; gap: 36px; align-items: center; position: relative; z-index: 1; }
+      .professor-headline { text-align: center; }
+      .professor-text { width: 100%; order: 1; }
+      .professor-labels {
+        width: 100%; order: 0;
+        display: flex; flex-direction: row; flex-wrap: wrap; gap: 12px;
+      }
+      .label-badge { font-size: 10.5px; padding: 13px 16px; border-radius: 172px; flex: 0 0 calc(50% - 6px); }
+      .professor-labels .label-badge:nth-child(1) { flex: 0 0 auto; }
+      .professor-labels .label-badge:nth-child(2) { flex: 1 0 0; font-size: 10.5px; }
+      .label-badge[style] { width: auto !important; }
     }
 
     @media (max-width: 480px) {
-      .section-hero { padding: 80px 20px 50px; }
-      .hero-top-row { flex-direction: column; align-items: flex-start; }
+      .section-hero { padding: 60vw 20px 44px; }
+      .hero-top-row { flex-direction: column; align-items: center; }
+      .hero-top-row .hero-badge { display: none; }
       .section-contexto { padding: 40px 20px; }
       .section-aprender { padding: 40px 20px; }
       .popup-box { padding: 40px 24px 32px; }
@@ -413,6 +440,10 @@
           <img src="assets/icon-checkmark-2.svg" alt="">
           <p>Como ter recorde de honorários.</p>
         </div>
+      </div>
+
+      <div class="hero-badge hero-badge--mobile">
+        <span class="grad-gold">EXCLUSIVO PARA ADVOGADOS</span>
       </div>
 
       <button class="btn-gold" onclick="openPopup()">CLIQUE AQUI PARA SE INSCREVER</button>
@@ -491,7 +522,15 @@
       <source media="(max-width: 900px)" srcset="assets/bg-professor-mobile.jpg">
       <img class="professor-bg" src="assets/bg-professor.jpg" alt="">
     </picture>
+    <div class="professor-overlay" aria-hidden="true"></div>
     <div class="professor-content">
+
+      <div class="professor-labels">
+        <div class="label-badge"><span class="grad-gold">Ex-Juiz Federal</span></div>
+        <div class="label-badge"><span class="grad-gold">20 anos de experiência na área e referência no previdenciário</span></div>
+        <div class="label-badge"><span class="grad-gold">+ de 14.000 alunos com vidas transformadas</span></div>
+        <div class="label-badge"><span class="grad-gold">Professor e Coordenador da IJUPREV</span></div>
+      </div>
 
       <div class="professor-text">
         <h2 class="professor-headline grad-gold">Quem é o Prof. Frederico Martins?</h2>
@@ -502,13 +541,6 @@
           <p>Após pedir exoneração da magistratura há alguns meses, Frederico decidiu voltar para o campo de batalha para não apenas te ensinar, mas <strong class="grad-gold">viver junto com você A Maior Onda de Clientes na Advocacia Previdenciária.</strong></p>
         </div>
         <button class="btn-gold" onclick="openPopup()">GARANTIR MEU LUGAR NO EVENTO</button>
-      </div>
-
-      <div class="professor-labels">
-        <div class="label-badge"><span class="grad-gold">Ex-Juiz Federal</span></div>
-        <div class="label-badge"><span class="grad-gold">20 anos de experiência na área e referência no previdenciário</span></div>
-        <div class="label-badge"><span class="grad-gold">+ de 14.000 alunos com vidas transformadas</span></div>
-        <div class="label-badge"><span class="grad-gold">Professor e Coordenador da IJUPREV</span></div>
       </div>
 
     </div>
