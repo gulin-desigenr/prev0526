@@ -10,13 +10,18 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&family=Unbounded:wght@600&family=Manrope:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&family=Nunito+Sans:ital,opsz,wdth,wght@0,6..12,75..125,200..1000;1,6..12,75..125,200..1000&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: 'Nunito Sans', sans-serif;
-      background: #010312;
+      background-color: #010312;
+      background-image: url('https://www.figma.com/api/mcp/asset/4998cd56-6d8e-4a1b-ab37-a2d37bed86f0');
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
       color: #fff;
       overflow-x: hidden;
       min-height: 100vh;
@@ -24,70 +29,62 @@
       flex-direction: column;
     }
 
-    /* ─── Gradient text ─── */
-    .text-gold {
-      background: linear-gradient(90deg, #a35139 0%, #feb161 49.519%, #a35139 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    /* ─── Banner ─── */
+    .banner {
+      background: linear-gradient(90deg, #ff2626 0%, #991717 100%);
+      padding: 16px 24px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .banner__text {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.4;
+      color: #fff;
+    }
+
+    /* ─── Main content ─── */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 35px 24px 50px;
+      gap: 40px;
+    }
+
+    /* ─── Dark card ─── */
+    .card {
+      background: rgba(1, 3, 18, 0.68);
+      border-radius: 12px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      width: 100%;
+      max-width: 960px;
     }
 
     /* ─── Logo ─── */
     .logo {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      line-height: 1;
-    }
-    .logo__maior {
-      font-family: 'Unbounded', sans-serif;
-      font-weight: 600;
-      font-size: 36px;
-      background: linear-gradient(90deg, #8f8f8f 0%, #ffffff 56%, #8f8f8f 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      white-space: nowrap;
-    }
-    .logo__onda {
-      font-family: 'Unbounded', sans-serif;
-      font-weight: 600;
-      font-size: 16px;
-      background: linear-gradient(90deg, #a35139 0%, #feb161 49.519%, #a35139 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-    }
-    .logo__sub {
-      font-weight: 300;
-      font-size: 7px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #fff;
-      margin-top: 4px;
+      width: 240px;
+      height: 76px;
+      display: block;
+      flex-shrink: 0;
+      object-fit: contain;
     }
 
-    /* ─── WhatsApp button ─── */
-    .btn-whatsapp {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      background: linear-gradient(104deg, #48f039 17%, #9dff94 40.6%, #48f039 97%);
-      color: #000;
+    /* ─── Headline ─── */
+    .headline {
       font-weight: 700;
-      font-size: 18px;
-      padding: 18px 28px;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: opacity .2s, transform .15s;
-      width: 100%;
-      max-width: 520px;
+      font-size: 50px;
+      line-height: 1.15;
+      text-align: center;
+      max-width: 720px;
+      letter-spacing: -1.5px;
+      color: #fff;
     }
-    .btn-whatsapp:hover { opacity: .93; transform: translateY(-1px); }
-    .btn-whatsapp img { width: 22px; flex-shrink: 0; }
 
     /* ─── Progress bar ─── */
     .progress-wrap {
@@ -95,7 +92,6 @@
       border-radius: 7px;
       padding: 3px;
       width: 100%;
-      max-width: 880px;
     }
     .progress-bar {
       background: #48f039;
@@ -110,109 +106,214 @@
     .progress-bar span {
       font-family: 'Manrope', sans-serif;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 18px;
       color: #000;
-      letter-spacing: -.5px;
+      letter-spacing: -0.54px;
     }
 
-    /* ─── Step boxes ─── */
-    .step-box {
+    /* ─── Step 1 box ─── */
+    .step1-box {
       background: #26293d;
       border-radius: 12px;
-      padding: 24px 28px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      align-items: center;
+      gap: 26px;
+      width: 100%;
+    }
+    .step1-content {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
       align-items: center;
       text-align: center;
       width: 100%;
-      max-width: 880px;
     }
-    .step-box--light {
+
+    /* ─── Step 2 box ─── */
+    .step2-box {
       background: #383c58;
+      border-radius: 12px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 26px;
+      width: 100%;
+      text-align: center;
     }
-    .step-box h3 {
+
+    /* ─── Step titles & descriptions ─── */
+    .step-title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.4;
+      color: #fff;
+    }
+    .step-desc {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 1.4;
+      color: #fff;
+    }
+
+    /* ─── WhatsApp button ─── */
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background: linear-gradient(104deg, #48f039 17%, #9dff94 40.6%, #48f039 97%);
+      color: #000;
       font-weight: 700;
       font-size: 20px;
       line-height: 1.4;
+      padding: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity .2s, transform .15s;
+      width: 100%;
+      max-width: 526px;
     }
-    .step-box p {
-      font-size: 17px;
-      line-height: 1.5;
-      font-weight: 400;
+    .btn-whatsapp:hover { opacity: .93; transform: translateY(-1px); }
+    .btn-whatsapp img { width: 20px; height: 20px; flex-shrink: 0; object-fit: contain; }
+
+    /* ─── Countdown title ─── */
+    .countdown-title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1.4;
+      text-align: center;
+      max-width: 580px;
+      background: linear-gradient(90deg, #a35139 0%, #feb161 49.519%, #a35139 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     /* ─── Countdown ─── */
     .countdown {
       display: flex;
-      gap: 28px;
-      align-items: flex-start;
+      gap: 33px;
+      align-items: center;
       justify-content: center;
     }
     .countdown__unit {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
-      min-width: 60px;
+      gap: 13px;
+      min-width: 61px;
+      text-align: center;
     }
     .countdown__num {
-      font-family: 'Nunito Sans', sans-serif;
       font-weight: 700;
-      font-size: 48px;
-      line-height: 1.2;
+      font-size: 50px;
+      line-height: 1.4;
+      color: #fff;
     }
     .countdown__label {
-      font-size: 15px;
-      font-weight: 400;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.4;
       color: #fff;
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      background: #02061b;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 32px 24px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .footer__copyright,
+    .footer__links {
+      font-size: 14px;
+      color: #fff;
+      line-height: 1.73;
+    }
+    .footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* ─── Mobile ─── */
+    @media (max-width: 640px) {
+      body {
+        background-image: url('https://www.figma.com/api/mcp/asset/3fc08a04-5381-4a20-b064-ff56eec61bc0');
+      }
+
+      .banner { padding: 20px 4vw; }
+      .banner__text { font-size: 16px; }
+
+      .main-content { padding: 35px 4vw 50px; }
+
+      .card { padding: 30px 10px; }
+
+      .headline {
+        font-size: 28px;
+        letter-spacing: -0.84px;
+        max-width: 100%;
+      }
+
+      .progress-bar { height: 24px; }
+      .progress-bar span { font-size: 10px; }
+
+      .step-title { font-size: 18px; }
+      .step-desc { font-size: 16px; }
+
+      .btn-whatsapp {
+        font-size: 10px;
+        white-space: nowrap;
+        gap: 8px;
+        padding: 14px 10px;
+        max-width: 100%;
+      }
+
+      .step2-box { padding: 20px; }
+
+      .countdown-title {
+        font-size: 18px;
+        max-width: 100%;
+      }
+
+      .countdown { gap: 20px; }
+
+      .footer { padding: 28px 4vw; }
+      .footer__copyright { white-space: nowrap; font-size: 10px; }
+      .footer__links { font-size: 12px; }
     }
   </style>
 </head>
 <body>
 
 <!-- ═══════════════════════════════════════════
-     TOP BANNER
+     BANNER
 ════════════════════════════════════════════ -->
-<div style="background:linear-gradient(90deg, #ff2626 0%, #991717 100%); padding:16px 24px; text-align:center; flex-shrink:0;">
-  <p style="font-weight:700; font-size:20px; letter-spacing:.2px;">IMPORTANTE! NÃO SAIA DESTA PÁGINA!</p>
+<div class="banner">
+  <p class="banner__text">IMPORTANTE! NÃO SAIA DESTA PÁGINA!</p>
 </div>
 
 
 <!-- ═══════════════════════════════════════════
      MAIN CONTENT
 ════════════════════════════════════════════ -->
-<main style="flex:1; position:relative; overflow:hidden;">
+<main class="main-content">
 
-  <!-- Background glow effects -->
-  <div aria-hidden="true" style="position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden;">
-    <img src="https://www.figma.com/api/mcp/asset/88140113-d362-4808-9285-b5760fbbf4a1"
-         alt="" style="position:absolute; width:200%; left:-50%; top:-40%; opacity:.12; filter:blur(60px) rotate(90deg);">
-    <!-- Left glow -->
-    <div style="position:absolute; left:-200px; top:200px; width:600px; height:600px;
-                background:radial-gradient(circle, rgba(247,185,60,.12) 0%, transparent 70%);
-                border-radius:50%;"></div>
-    <!-- Right glow -->
-    <div style="position:absolute; right:-200px; top:-100px; width:700px; height:700px;
-                background:radial-gradient(circle, rgba(72,240,57,.06) 0%, transparent 70%);
-                border-radius:50%;"></div>
-    <!-- Gradient overlays -->
-    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(1,3,18,0) 30%, rgba(1,3,18,.72) 60%, #010312 100%);"></div>
-    <div style="position:absolute; inset:0; background:linear-gradient(90deg, #010312 0%, rgba(1,3,18,0) 30%, rgba(1,3,18,0) 70%, #010312 100%);"></div>
-  </div>
-
-  <!-- Content -->
-  <div style="position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; padding:48px 24px 64px; gap:28px;">
+  <!-- ── Dark card (logo + headline + progress + steps) ── -->
+  <div class="card">
 
     <!-- Logo -->
-    <div class="logo">
-      <span class="logo__maior">A maior</span>
-      <span class="logo__onda">ONDA DE CLIENTES</span>
-      <span class="logo__sub">na Advocacia Previdenciária</span>
-    </div>
+    <img class="logo"
+         src="https://www.figma.com/api/mcp/asset/adc09ff7-935f-4b9e-9aa9-8c35d7ab9393"
+         alt="A Maior Onda de Clientes na Advocacia Previdenciária">
 
     <!-- Headline -->
-    <p style="font-weight:700; font-size:42px; line-height:1.15; text-align:center; max-width:700px; letter-spacing:-.5px;">
+    <p class="headline">
       Faltam apenas 1 passo para confirmar a sua inscrição:
     </p>
 
@@ -224,64 +325,62 @@
     </div>
 
     <!-- Step 1: WhatsApp -->
-    <div class="step-box">
-      <h3>1. Entre no Grupo exclusivo no WhatsApp:</h3>
-      <p>
-        Esse passo é ESSENCIAL para garantir o seu acesso à aula, à oferta e aos materiais gratuitos.<br>
-        Toque no botão abaixo e entre agora mesmo:
-      </p>
-      <a href="LINK_WHATSAPP_AQUI" class="btn-whatsapp">
-        <img src="https://www.figma.com/api/mcp/asset/a4b8f0b8-0b07-4191-84cd-6088ede22b3a" alt="WhatsApp">
+    <div class="step1-box">
+      <div class="step1-content">
+        <p class="step-title">1. Entre no Grupo exclusivo no WhatsApp:</p>
+        <p class="step-desc">
+          Esse passo é ESSENCIAL para garantir o seu acesso à aula, à oferta e aos materiais gratuitos.<br>
+          Toque no botão abaixo e entre agora mesmo:
+        </p>
+      </div>
+      <a href="https://sndflw.com/i/-a-maior-onda-de-clientes" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+        <img src="https://www.figma.com/api/mcp/asset/29aefa1d-021d-4b5a-867f-fb674abaef12" alt="WhatsApp">
         CONFIRMAR INSCRIÇÃO E ENTRAR NO GRUPO
       </a>
     </div>
 
     <!-- Step 2: Email -->
-    <div class="step-box step-box--light">
-      <h3>2. Verifique se você recebeu o e-mail de confirmação da sua inscrição.</h3>
-      <p>Acabei de te enviar um e-mail muito importante. Cheque a caixa principal e, se não encontrar, olhe o Spam, aba de Promoções e a Lixeira.</p>
-    </div>
-
-    <!-- Countdown -->
-    <div style="text-align:center; display:flex; flex-direction:column; gap:24px; align-items:center; margin-top:8px;">
-      <p style="font-weight:700; font-size:20px; line-height:1.4; max-width:540px;">
-        <span class="text-gold">O seu acesso à A Maior Onda de Clientes na Advocacia Previdenciária será liberado em:</span>
-      </p>
-
-      <div class="countdown">
-        <div class="countdown__unit">
-          <span class="countdown__num" id="cd-days">00</span>
-          <span class="countdown__label">dias</span>
-        </div>
-        <div class="countdown__unit">
-          <span class="countdown__num" id="cd-hours">00</span>
-          <span class="countdown__label">horas</span>
-        </div>
-        <div class="countdown__unit">
-          <span class="countdown__num" id="cd-minutes">00</span>
-          <span class="countdown__label">minutos</span>
-        </div>
-        <div class="countdown__unit">
-          <span class="countdown__num" id="cd-seconds">00</span>
-          <span class="countdown__label">segundos</span>
-        </div>
-      </div>
+    <div class="step2-box">
+      <p class="step-title">2. Verifique se você recebeu o e-mail de confirmação da sua inscrição.</p>
+      <p class="step-desc">Acabei de te enviar um e-mail muito importante. Cheque a caixa principal e, se não encontrar, olhe o Spam, aba de Promoções e a Lixeira.</p>
     </div>
 
   </div>
+
+  <!-- Countdown title -->
+  <p class="countdown-title">
+    O seu acesso à A Maior Onda de Clientes na Advocacia Previdenciária será liberado em:
+  </p>
+
+  <!-- Countdown -->
+  <div class="countdown">
+    <div class="countdown__unit">
+      <span class="countdown__num" id="cd-days">00</span>
+      <span class="countdown__label">dias</span>
+    </div>
+    <div class="countdown__unit">
+      <span class="countdown__num" id="cd-hours">00</span>
+      <span class="countdown__label">horas</span>
+    </div>
+    <div class="countdown__unit">
+      <span class="countdown__num" id="cd-minutes">00</span>
+      <span class="countdown__label">minutos</span>
+    </div>
+    <div class="countdown__unit">
+      <span class="countdown__num" id="cd-seconds">00</span>
+      <span class="countdown__label">segundos</span>
+    </div>
+  </div>
+
 </main>
 
 
 <!-- ═══════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════════ -->
-<footer style="background:#02061b; padding:28px 24px; text-align:center; flex-shrink:0;">
-  <p style="font-size:13px; color:#fff; line-height:1.8;">
-    © 2026 - ePREV Ensino Jurídico - Todos os direitos reservados<br>
-    <a href="#" style="color:#fff; text-decoration:underline;">Termos de Uso</a>
-    &nbsp;|&nbsp;
-    <a href="#" style="color:#fff; text-decoration:underline;">Políticas de Privacidade</a>
-  </p>
+<footer class="footer">
+  <p class="footer__copyright">© 2026 - ePREV Ensino Jurídico - Todos os direitos reservados</p>
+  <p class="footer__links"><a href="#">Termos de Uso</a> | <a href="#">Políticas de Privacidade</a></p>
 </footer>
 
 
