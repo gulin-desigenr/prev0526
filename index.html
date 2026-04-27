@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,700;6..12,800&family=Unbounded:wght@600&display=swap" rel="stylesheet">
 
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://load.server.eprevensino.com.br/eazpzlxoo.js?"+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','2z8o=BgtFKy49VyxWXDAiMkRDRxlSSkJLVh4PUgoIHh8GHw8cBhYDVBMVDEENCg%3D%3D');</script>
+  <!-- End Google Tag Manager -->
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -409,6 +413,10 @@
 </head>
 <body>
 
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://load.server.eprevensino.com.br/ns.html?id=GTM-M93HNH49" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <!-- ═══ HERO ═══ -->
   <section class="section-hero">
     <div class="hero-bg">
@@ -564,7 +572,7 @@
       <p class="popup-headline">Garanta sua vaga<br><span class="grad-gold">no evento gratuito</span></p>
       <p class="popup-sub">Preencha os dados abaixo e receba o acesso no seu e-mail.</p>
 
-      <form class="popup-form" onsubmit="handleSubmit(event)">
+      <form class="popup-form" name="PREV0526_CLAUDE" onsubmit="handleSubmit(event)">
         <input class="popup-input" type="text" name="nome" placeholder="Seu nome completo" required>
         <input class="popup-input" type="email" name="email" placeholder="Seu melhor e-mail" required>
 
@@ -602,6 +610,31 @@
 
 
   <script>
+    /* ── UTMs + tracking (captura ao carregar a página) ── */
+    (function () {
+      var p = new URLSearchParams(window.location.search);
+      window.__tracking = {
+        utm_source:   p.get('utm_source')   || '',
+        utm_medium:   p.get('utm_medium')   || '',
+        utm_campaign: p.get('utm_campaign') || '',
+        utm_content:  p.get('utm_content')  || '',
+        utm_term:     p.get('utm_term')     || '',
+        utm_id:       p.get('utm_id')       || '',
+        fbclid:       p.get('fbclid')       || '',
+        gclid:        p.get('gclid')        || '',
+        full_url:     window.location.href,
+        page_version: p.get('ver')          || '',
+      };
+    })();
+
+    /* ── Gera form_id único e aplica ao <form> ── */
+    (function () {
+      var id = typeof crypto !== 'undefined' && crypto.randomUUID
+        ? crypto.randomUUID()
+        : Math.random().toString(36).slice(2) + Date.now().toString(36);
+      document.querySelector('.popup-form').id = id;
+    })();
+
     /* ── Popup ── */
     function openPopup() {
       document.getElementById('popupOverlay').classList.add('active');
@@ -620,61 +653,76 @@
 
     /* ── Formatação do telefone ── */
     function updatePhoneMask() {
-      const input = document.getElementById('phoneInput');
-      const country = document.getElementById('phoneCountry');
-      const mask = country.options[country.selectedIndex].dataset.mask;
-
-      // Limpa e reaplica o placeholder correto por país
-      const placeholders = {
-        br: '(45) 99965-4084',
-        us: '(555) 123-4567',
-        pt: '912 345 678',
-        ar: '(11) 1234-5678',
-        uy: '098 123 456',
-        py: '0981 123 456',
-        cl: '9 1234 5678',
-        co: '312 345 6789',
+      var input   = document.getElementById('phoneInput');
+      var country = document.getElementById('phoneCountry');
+      var mask    = country.options[country.selectedIndex].dataset.mask;
+      var placeholders = {
+        br: '(45) 99965-4084', us: '(555) 123-4567', pt: '912 345 678',
+        ar: '(11) 1234-5678',  uy: '098 123 456',    py: '0981 123 456',
+        cl: '9 1234 5678',     co: '312 345 6789',
       };
       input.placeholder = placeholders[mask] || 'Seu número';
       input.value = '';
     }
 
     document.getElementById('phoneInput').addEventListener('input', function() {
-      const country = document.getElementById('phoneCountry');
-      const mask = country.options[country.selectedIndex].dataset.mask;
+      var country = document.getElementById('phoneCountry');
+      var mask    = country.options[country.selectedIndex].dataset.mask;
       formatPhone(this, mask);
     });
 
     function formatPhone(input, mask) {
-      let digits = input.value.replace(/\D/g, '');
-
+      var digits = input.value.replace(/\D/g, '');
       if (mask === 'br') {
-        // Brasil: (DD) XXXXX-XXXX ou (DD) XXXX-XXXX
         if (digits.length > 11) digits = digits.slice(0, 11);
-        if (digits.length <= 2) {
-          input.value = digits.length ? '(' + digits : '';
-        } else if (digits.length <= 6) {
-          input.value = '(' + digits.slice(0, 2) + ') ' + digits.slice(2);
-        } else if (digits.length <= 10) {
-          input.value = '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 6) + '-' + digits.slice(6);
-        } else {
-          input.value = '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 7) + '-' + digits.slice(7);
-        }
+        if (digits.length <= 2)       input.value = digits.length ? '(' + digits : '';
+        else if (digits.length <= 6)  input.value = '(' + digits.slice(0,2) + ') ' + digits.slice(2);
+        else if (digits.length <= 10) input.value = '(' + digits.slice(0,2) + ') ' + digits.slice(2,6) + '-' + digits.slice(6);
+        else                          input.value = '(' + digits.slice(0,2) + ') ' + digits.slice(2,7) + '-' + digits.slice(7);
       } else {
-        // Para outros países: exibe os dígitos sem formatação específica
         input.value = digits;
       }
     }
 
-    /* ── Submit ── */
+    /* ── Submit → webhook n8n ── */
     function handleSubmit(e) {
       e.preventDefault();
-      const country = document.getElementById('phoneCountry').value;
-      const data = Object.fromEntries(new FormData(e.target));
-      data.telefone = country + ' ' + data.telefone;
-      // TODO: integrar com ActiveCampaign / RD Station / webhook
-      console.log('Lead capturado:', data);
-      window.location.href = 'obrigado.html';
+      var btn = e.target.querySelector('.popup-submit');
+      btn.disabled = true;
+      btn.textContent = 'Aguarde...';
+
+      var country  = document.getElementById('phoneCountry').value;
+      var formData = Object.fromEntries(new FormData(e.target));
+      formData.telefone = country + ' ' + formData.telefone;
+
+      /* Data/hora da conversão no fuso de Brasília */
+      var now   = new Date();
+      var parts = Object.fromEntries(
+        new Intl.DateTimeFormat('pt-BR', {
+          timeZone: 'America/Sao_Paulo',
+          year: 'numeric', month: '2-digit', day: '2-digit',
+          hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false,
+        }).formatToParts(now).map(function(p){ return [p.type, p.value]; })
+      );
+      var data_hora_conversao = parts.year + '-' + parts.month + '-' + parts.day
+        + ' ' + parts.hour + ':' + parts.minute + ':' + parts.second + ' (BRT)';
+
+      var payload = Object.assign({
+        form_name:            'PREV0526_CLAUDE',
+        form_id:              e.target.id,
+        nome:                 formData.nome,
+        email:                formData.email,
+        telefone:             formData.telefone,
+        data_hora_conversao:  data_hora_conversao,
+      }, window.__tracking);
+
+      fetch('https://n8nwebhook.eprevensino.com.br/webhook/prev0526-claude', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      .catch(function(){})
+      .finally(function(){ window.location.href = 'obrigado.html'; });
     }
   </script>
 
